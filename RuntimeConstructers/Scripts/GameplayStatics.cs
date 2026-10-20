@@ -1,12 +1,22 @@
-using ModMenu;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
+using System;
 
-namespace RuntimeGUI;
-
+namespace RuntimeGUI
+{
 public static class GameplayStatics
 {
-    public static List<Component> FindAllPrefabsWithComponent(Type type)
+        public static bool IsPrefab(this GameObject gameObject)
+        {
+            if (gameObject == null) return false;
+
+            // 1. Wenn die Szene des GameObjects keinen Namen und keinen validen Pfad hat, 
+            //    ist es kein Teil der aktiven Hierarchie (typisch für geladene Assets/Prefabs).
+            return string.IsNullOrEmpty(gameObject.scene.name) && gameObject.scene.buildIndex == -1;
+        }
+
+         public static List<Component> FindAllPrefabsWithComponent(Type type)
     {
         if (type == null || !type.IsSubclassOf(typeof(Component)))
         {
@@ -88,4 +98,5 @@ public static class GameplayStatics
             UnityEngine.Object.Instantiate(GameObjectsToAdd[i]);
         }
     }
+}
 }
