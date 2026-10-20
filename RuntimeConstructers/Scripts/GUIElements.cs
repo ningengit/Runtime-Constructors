@@ -496,7 +496,7 @@ namespace RuntimeConstructers
         /// <summary>
         /// Creates a legacy InputField.
         /// </summary>
-        public static InputField LegacyInputField(GameObject Canvas, Vector2 position, , string InputFieldtext = "", string InputFieldName = "InputField (Legacy)")
+        public static InputField LegacyInputField(GameObject Canvas, Vector2 position, string InputFieldtext = "", string InputFieldName = "InputField (Legacy)")
         {
             InputField InputField = new GameObject(InputFieldName, typeof(Image), typeof(InputField)).GetComponent<InputField>();
             Text Placeholder = new GameObject("Placeholder", typeof(Text)).GetComponent<Text>();
