@@ -1,9 +1,6 @@
-# Simple Unity Scripts
+# Runtime Constructors for Unity
 
-This repo really isn't anything special but it has scripts that can:
-
--Get any asset loaded in memory 
-
--Make a new "scene" 
-
--Add UI objects such as a InputField - TextMeshPro
+Lightweight runtime utilities for Unity that let you:
+- Spawn fully-styled **uGUI** (`GUIElements`) and **TextMeshPro** (`GUIElementsTMP`) controls (`Button`, `Slider`, `Toggle`, `ScrollView`, `InputField`, `Dropdown`, `Canvas`) in a single line at runtime—powered by `DefaultControls` + embedded Base64 sprites so controls never appear as blank white boxes in player builds.
+- Query loaded prefabs in memory and create runtime scenes (`GameplayStatics`).
+- Create 3D text objects (`ThreeD`) and export hierarchy snapshots (`SaveGameObject`).
